@@ -1,3 +1,44 @@
 body{
+    position: relative;
+    padding: 0;
+    margin: 0;
     background-color: bisque;
+    height: 100vh;
+}
+
+.main-content-wrapper{
+    /* position: absolute;
+    top: 20%;
+    left: 40%; */
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+footer{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 0;
+}
+
+#fname{
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    background: transparent;
+}
+
+#fname:focus{
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    outline: none;
+    background: transparent;
+}
+
+#add{
+    background: transparent;
+   border: none;
 }
