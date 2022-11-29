@@ -1,32 +1,31 @@
-<!DOCTYPE html>
-<html>
-    <link rel="stylesheet" href="css/style.css">
-
-<body>
-
+<%- include('header'); -%>
     <h1>
         <%= currentDay %> FOOD LIST
     </h1>
 
     <ul>
-        <li>Coffee</li>
-        <li>Tea</li>
-        <li>Milk</li>
+        <h3>
+            <li>Coffee</li>
+        </h3>
+        <h3>
+            <li>Tea</li>
+        </h3>
+        <h3>
+            <li>Milk</li>
+        </h3>
         <!-- <li><%= listitems%></li> -->
         <% for(var i=0 ; i<listitems.length ; i++) { %>
             <li>
-                <%= listitems[i] %>
+                <h3>
+                    <%= listitems[i] %>
+                </h3>
             </li>
             <% } %>
     </ul>
 
 
     <form action="/" method="post">
-        <input type="text" id="fname" name="list" placeholder="enter today list"  autocomplete="off"><br><br>
-        <button type="submit">add</button>
+        <input type="text" id="fname" name="list" placeholder="enter today list" autocomplete="off">
+        <button type="submit" id="add" ><h3>+</h3></button>
     </form>
-
-
-</body>
-
-</html>
+    <%- include('footer'); -%>
