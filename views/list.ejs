@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" href="css/style.css">
+
+<body>
+
+    <h1>
+        <%= currentDay %> FOOD LIST
+    </h1>
+
+    <ul>
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Milk</li>
+        <!-- <li><%= listitems%></li> -->
+        <% for(var i=0 ; i<listitems.length ; i++) { %>
+            <li>
+                <%= listitems[i] %>
+            </li>
+            <% } %>
+    </ul>
+
+
+    <form action="/" method="post">
+        <input type="text" id="fname" name="list" placeholder="enter today list"  autocomplete="off"><br><br>
+        <button type="submit">add</button>
+    </form>
+
+
+</body>
+
+</html>
