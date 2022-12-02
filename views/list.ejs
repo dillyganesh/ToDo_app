@@ -1,18 +1,9 @@
 <%- include('header'); -%>
     <h1>
-        <%= currentDay %> FOOD LIST
+        <%= listTitle %>  LIST
     </h1>
 
     <ul>
-        <h3>
-            <li>Coffee</li>
-        </h3>
-        <h3>
-            <li>Tea</li>
-        </h3>
-        <h3>
-            <li>Milk</li>
-        </h3>
         <!-- <li><%= listitems%></li> -->
         <% for(var i=0 ; i<listitems.length ; i++) { %>
             <li>
@@ -26,6 +17,6 @@
 
     <form action="/" method="post">
         <input type="text" id="fname" name="list" placeholder="enter today list" autocomplete="off">
-        <button type="submit" id="add" ><h3>+</h3></button>
+        <button type="submit" id="add"  name="List"  value=<%= listTitle %>  ><h3>+</h3></button>
     </form>
     <%- include('footer'); -%>

@@ -2,14 +2,14 @@ const express = require('express');
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const app = express();
-app.use(express.static(__dirname + "/public"));
+app.use(express.static( __dirname + "/public"));
 
 //setting view engine to ejs
 app.set("view engine", "ejs");
 
 app.use(bodyParser.urlencoded({ extended: true }));
-var workitems = ["study", "buy biscuts", "learn something"];
-var items = ['coffe','tea','ice cream'];
+
+var items = [];
 
 
 app.get("/", function (req, res) {
@@ -42,7 +42,7 @@ app.get("/", function (req, res) {
             day = "Saturday";
     }
     res.render("list",
-        { listTitle: day, listitems: items });
+        { currentDay: day, listitems: items });
     // res.sendFile(__dirname+"/index.html");
 })
 
@@ -50,26 +50,14 @@ app.get("/", function (req, res) {
 app.post("/", function (req, res) {
     //console.log(req.body);
     // console.log( req.body.list );
-    if (req.body.List == "Work") {
-        //console.log(req.body.List);
-        var item1 = req.body.list;
-        workitems.push(item1);
-        res.redirect("/work");
-    } else {
-        var item = req.body.list;
-        items.push(item);
-        res.redirect("/");
-        //res.send("thank you ");
-    }
+    var item = req.body.list;
+    items.push(item);
 
+
+    res.redirect("/");
+    //res.send("thank you ");
 })
 
-app.get("/work", function (req, res) {
-    res.render("list", {
-        listTitle: "Work",
-        listitems: workitems
-    });
-})
 
 app.listen(3000, function () {
     console.log("server strated");
